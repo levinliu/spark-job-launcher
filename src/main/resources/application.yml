@@ -1,0 +1,25 @@
+server:
+  name: spark-job-trigger
+  port: 13024
+  compression:
+    enabled: true
+
+spring:
+  artefactId: spark-job-trigger
+  servlet:
+    multipart:
+    max-file-size: 100MB
+    max-request-size: 100MB
+    enabled: true
+
+
+swagger:
+  enable: true
+
+
+spark-job-trigger:
+  spark-jar-path: ./localJar/spark-job.jar
+  spark-home: /demo/localSpark
+  java-home: /demo/JavaHome
+  master: local[1]
+  main-class: org.wumiguo.DemoRunner
